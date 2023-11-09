@@ -18,7 +18,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero': "url('/img/hero/background-hero.jpg')",
       },
       boxShadow: {
         glow: [
@@ -27,64 +26,44 @@ module.exports = {
         ]
       },
       colors: {
-        border: "hsl(210, 40%, 96%)",
-        input: "hsl(217, 32%, 17%)",
-        ring: "hsl(217, 32%, 17%)",
-        background: "#f2f2f2",
-        foreground: "#141414",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#32c2f0",
-          foreground: "#141414",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
-        },
-        tertiary: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
-        },
-        quaternary: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "#141414",
-          foreground: "#141414",
-        },       
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        ellipsis: 'ellipsis 1.25s infinite',
-        'spin-slow': 'spin 2s linear infinite',
-        fade: 'opacity 150ms linear',
-        'gradient-x':'gradient-x 5s ease infinite',
-        'gradient-y':'gradient-y 5s ease infinite',
-        'gradient-xy':'gradient-xy 5s ease infinite',
-        shakeY: 'shakeY 3s linear infinite alternate',
-        shakeX: 'shakeX 3s linear infinite alternate',
       },
       keyframes: {
         "accordion-down": {
@@ -95,74 +74,12 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
-        ellipsis: {
-          '0%': { content: '"."' },
-          '33%': { content: '".."' },
-          '66%': { content: '"..."' },
-        },
-        opacity: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 100 },
-        },
-        'gradient-y': {
-          '0%, 100%': {
-              'background-size':'400% 400%',
-              'background-position': 'center top'
-          },
-          '50%': {
-              'background-size':'200% 200%',
-              'background-position': 'center center'
-          }
-        },
-        'gradient-x': {
-          '0%, 100%': {
-              'background-size':'200% 200%',
-              'background-position': 'left center'
-          },
-          '50%': {
-              'background-size':'200% 200%',
-              'background-position': 'right center'
-          }
-        },
-        'gradient-xy': {
-            '0%, 100%': {
-                'background-size':'400% 400%',
-                'background-position': 'left center'
-            },
-            '50%': {
-                'background-size':'200% 200%',
-                'background-position': 'right center'
-            }
-        },
-        shakeY: {
-          '0%': {
-            transform: 'translateY(15px)',
-          },          
-          '100%': {
-            transform: 'translateY(-15px)',
-          },
-        },
-        shakeX: {
-          '0%': {
-            transform: 'translateX(15px)',
-          },          
-          '100%': {
-            transform: 'translateX(-15px)',
-          },
-        },
-        dogeJuice: {
-          '0%': {
-            transform: 'translateY(15px)',
-          },          
-          '100%': {
-            transform: 'translateY(-15px)',
-          },
-        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require("tailwindcss-animate")
-  ],
+  plugins: [require("tailwindcss-animate")],
 }
